@@ -1,0 +1,53 @@
+<div class="container">
+  
+
+        <form [formGroup]="editform" (ngSubmit)="update() ">
+          <div class="row mt-3 px-3">
+      <div class="col-xl-3"> 
+        <mat-form-field  >
+            <label class=" text-secondary" >COMPANY</label>
+            <input matInput  autocomplete="off" formControlName="company">
+          </mat-form-field>
+    </div>
+        <div class="col-xl-3"> 
+            <mat-form-field  >
+                <label class=" text-secondary" >MOBILE</label>
+                <input matInput  autocomplete="off" formControlName="mobileno">
+              </mat-form-field>
+              </div>
+              <div class="col-xl-3 "> 
+                <mat-form-field w-100 >
+                    <label class=" text-secondary" >CITY</label>
+                    <input matInput  autocomplete="off" formControlName="city">
+                  </mat-form-field>
+            </div>
+            <div class="col-xl-3">
+                <mat-form-field w-100>
+                    <label class=" text-secondary" >GENDER</label>
+                    <input matInput  autocomplete="off" formControlName="gender">
+                  </mat-form-field>
+            </div>
+            <div class="col-xl-3  "> 
+                <mat-form-field w-100>
+                    <label class=" text-secondary" >PAN</label>
+                    <input matInput  autocomplete="off" formControlName="Pan" >
+                  </mat-form-field>
+            </div>
+    
+        <div class="col-xl-3 ">
+            <mat-form-field w-100>
+                <label class=" text-secondary" >FATHER</label>
+                <input matInput  autocomplete="off" formControlName="fathername">
+              </mat-form-field> 
+        </div>
+       
+        <div class="row justify-content-center  my-5">
+                <div class="col-xl-3">
+                    <button class="btn btn-success" >UPDATE</button>
+                </div>
+               
+              </div>
+            </div>
+            </form>
+
+</div>

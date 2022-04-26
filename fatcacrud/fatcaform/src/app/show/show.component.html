@@ -1,0 +1,37 @@
+<div class="main"> 
+<div class="container border border-white">    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SR.NO</th>
+            <th scope="col">CITY</th>
+            <th scope="col">COMPANY</th>
+            <th scope="col">FATHER</th>
+            <th scope="col">GENDER</th>
+            <th scope="col">MOBILE</th>
+            <th scope="col">PAN</th>
+            <th scope="col">Actions</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ans of formdata">
+            <td ></td>
+            <td>{{ans.city}}</td>
+            <td>{{ans.company}}</td>
+            <td>{{ans.fathername}}</td>
+            <td>{{ans.gender}}</td>
+            <td>{{ans.mobileno}}</td>
+            <td>{{ans.Pan}}</td>
+            <td>
+              <a  (click)="openDialog(ans)"><mat-icon>edit</mat-icon></a>
+              <a (click)="deletee(ans)" ><mat-icon class="text-danger">delete</mat-icon></a>
+            </td>
+            
+          </tr>
+          <tr>
+           
+        </tbody>
+      </table>
+</div>
+</div>

@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+  }
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 30px;
+    box-shadow: 7px 6px 16px 15px  #eee;
+   
+}
+.main{padding-top: 50px;padding-bottom: 50px;}
+
+table
+{
+counter-reset: Serial;
+border-collapse: separate;
+}
+
+tr td:first-child:before
+{
+counter-increment: Serial; /* Increment the Serial counter */
+content: counter(Serial); /* Display the counter */
+}

@@ -1,0 +1,18 @@
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 30px;
+    box-shadow: 7px 6px 16px 15px  #eee;
+   
+}
+.main{padding-top: 50px;padding-bottom: 50px;}
+
+.colll{ background-color: rgba(179, 213, 227, 0.395);}
+.head{border-top-right-radius:30px ; border-top-left-radius: 30px;} 
+label{padding-bottom: 10px;}
+.btnpadx{padding-left: 25%;padding-right: 25%; }
+
+ 

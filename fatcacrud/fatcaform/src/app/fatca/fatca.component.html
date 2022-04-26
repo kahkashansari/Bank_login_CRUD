@@ -1,0 +1,556 @@
+
+<div class="main">
+    <div class="container border border-white">
+        <header >
+            <div class="row colll head pt-3">
+                <div class="col-xl-6 px-4"><h2 mat-subheading-1>Related Personal Details</h2></div>
+                <div class="col-xl-6 text-end px-4"><h2 mat-subheading-2>KYC Number:00000000</h2></div>
+            </div>
+        </header>
+        <form [formGroup]="fatcaform" (ngSubmit)="onsubmit()">
+          <div class="row mt-3 px-3">
+            <div class="col-xl-9 "> 
+              <label class="">Entry is the tax resdient (i.e are you aassessed for tax)</label> 
+        <mat-icon class="" color="primary"  matTooltip="hello there please fill the form" matTooltipPosition="after">info</mat-icon>
+          </div>
+          
+          </div>
+        <div class="row mt-3 px-3">   
+          <div class="col-xl-3 ">
+              No<mat-slide-toggle  class="fs-5" color="primary"></mat-slide-toggle>Yes
+          </div>                        
+      </div>
+        
+        <div class="row mt-3 px-3">
+            <div class="col-xl-3 "> 
+                <mat-form-field  class="w-100">
+                    <label class=" text-secondary">TaxCountry</label>
+                    <mat-select formControlName="taxcountry">
+                      <mat-option value="Lorem">lorem</mat-option>
+                      <mat-option value="Lorem">lorem</mat-option>
+                      <mat-option value="Lorem">lorem</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="Haserror('taxcountry','required')"> Please Select Tax Country*</mat-error>
+                  </mat-form-field>
+            </div>
+            <div class="col-xl-3 "> 
+                <mat-form-field class="w-100" >
+                    <label class=" text-secondary" >Tax Identification Number</label>
+                    <input matInput formControlName="tin" >
+                    <mat-error *ngIf="Haserror('tin','required')"> Please Select Tax Identification Number</mat-error>
+                  </mat-form-field>
+            </div>
+            <div class="col-xl-3 "> 
+                <mat-form-field class="w-100"autocomplete="off" >
+                    <label class=" text-secondary" >Identification Type</label>
+                    <input matInput formControlName="identificationtype" >
+                    <mat-error *ngIf="Haserror('identificationtype','required')"> Please Select Identification Type</mat-error>
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row mt-3 px-3">
+            <div class="col-xl-3">
+                <mat-form-field class="w-100" autocomplete="off">
+                  <label class=" text-secondary pt-2" >Identification Type</label>
+                 <mat-icon color="primary" class="px-2" matTooltip="hello there please fill the form" matTooltipPosition="after">info</mat-icon>
+                            <input matInput  >
+                          </mat-form-field>
+            </div>
+            </div>
+            <div class="row mt-3 px-4 pb-4">
+                <div class="col-xl-3">
+                    <h4 class="pt-3 ">Are You From CRS Judication</h4>
+                    <mat-radio-group aria-label="Select an option" >
+                        <mat-radio-button value="1" class="px-3" color="primary" >No</mat-radio-button>
+                        <mat-radio-button value="2" color="primary" >Yes</mat-radio-button>
+                      </mat-radio-group>
+                </div>
+                <div class="col-xl-3">
+                    <h4 class="pt-3 ">Are You From Inveestment Entity</h4>
+                    <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1" class="px-4" color="primary" >No</mat-radio-button>
+                        <mat-radio-button value="2" color="primary" >Yes</mat-radio-button>
+                      </mat-radio-group>
+                </div>
+                <div class="col-xl-3">
+                    <h4 class="pt-3 ">Is The Entity Managed By the Another Entity</h4>
+                    <mat-radio-group aria-label="Select an option" >
+                        <mat-radio-button value="1" class="px-4" color="primary">No</mat-radio-button>
+                        <mat-radio-button value="2" color="primary" >Yes</mat-radio-button>
+                      </mat-radio-group>
+                </div>
+            </div>
+            <!-- form second section -->
+            <header class="mt-4">
+                <div class="row colll">
+                    <div class="col-xl-6 pt-3 px-4"><h2 mat-subheading-1>Part A (to be filled by Financial institution or Direct Reporting NFEs)</h2></div>
+                </div>
+            </header>
+            <div class="row mt-3 px-3">
+           
+                <div class="col-xl-3 "> 
+                    <mat-form-field  class="w-100">
+                        <label class=" text-secondary">Name Of the Entity Type</label>
+                        <mat-select formControlName="nameofentitytype">
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Haserror('nameofentitytype','required')"> Please Select Identification Type</mat-error>
+                      </mat-form-field>
+                
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >GIIN</label>
+                        <input matInput  formControlName="giin" autocomplete="off">
+                    <mat-error *ngIf="Haserror('giin','required')"> Please Select GIIN</mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100"autocomplete="off" >
+                        <label class=" text-secondary" >Sponsoring Entity</label>
+                        <input matInput formControlName="sponsoringentity">
+                    <mat-error *ngIf="Haserror('sponsoringentity','required')"> Please Select Sponsoring Entity</mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field  class="w-100">
+                        <label class=" text-secondary">GIIN not available</label>
+                        <mat-select formControlName="giinnotavailable">
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Haserror('giinnotavailable','required')"> Please Select GIIN not available</mat-error>
+                      </mat-form-field>   
+                </div>
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off" >
+                        <label class=" text-secondary">Not required to apply for Sub Category</label>
+                        <select matNativeControl required formControlName="notrequiedtoapplyforthesubcategory">
+                          <option value="lorem">lorem</option>
+                          <option value="lorem">lorem</option>
+                        </select>
+                    <mat-error *ngIf="Haserror('notrequiedtoapplyforthesubcategory','required')"> Please Select Not required to apply for Sub Category</mat-error>
+                      </mat-form-field>
+                </div>
+            
+            </div>
+
+
+            <!-- part B of the form -->
+            <header class="mt-4">
+                <div class="row colll">
+                    <div class="col-xl-6 pt-3 px-4"><h2 mat-subheading-1>Part B (to be filled by NFEs other than Direct Reporting NFEs)</h2></div>
+                </div>
+            </header>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-3 "> 
+                    <mat-form-field  class="w-100">
+                        <label class=" text-secondary">Company</label>
+                        <mat-select formControlName="company">
+                          <mat-option value="MIDC">MIDC</mat-option>
+                          <mat-option value="CLOUD">CLOUD</mat-option>
+                          <mat-option value="TATA">TATA</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Haserror('company','required')"> Please Select Company</mat-error>
+                      </mat-form-field>
+                  
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field  class="w-100">
+                        <label class=" text-secondary">Related Entity</label>
+                        <mat-select formControlName="relatedentity">
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Haserror('relatedentity','required')">Please Related Entity</mat-error>
+                      </mat-form-field>
+                    
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field  class="w-100">
+                        <label class=" text-secondary">NFE</label>
+                        <mat-select formControlName="nfe">
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Haserror('nfe','required')"> Please Select NFE</mat-error>
+                      </mat-form-field>
+                </div>
+            
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off" >
+                        <label class=" text-secondary" >Name of the Stock Exchange</label>
+                        <input matInput formControlName="nameofthestockexchange" autocomplete="off">
+                    <mat-error *ngIf="Haserror('nameofthestockexchange','required')"> Please Name of the Stock Exchange </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >Name of the Publice Trade Company</label>
+                        <input matInput  formControlName="nameofthepubliclytadecompany" autocomplete="off">
+                    <mat-error *ngIf="Haserror('nameofthepubliclytadecompany','required')"> Please  select Name of the Publice Trade Company </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >Nature of business</label>
+                        <input matInput  formControlName="natureofbusiness" autocomplete="off">
+                    <mat-error *ngIf="Haserror('natureofbusiness','required')"> Please  select Nature of business </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100"autocomplete="off" >
+                        <label class=" text-secondary" >Sub-Category</label>
+                        <input matInput formControlName="subcategory" autocomplete="off">
+                    <mat-error *ngIf="Haserror('subcategory','required')"> Please select subcategory  </mat-error>
+                      </mat-form-field>
+                </div>
+            </div>
+             <!-- part c of the form -->
+             <header class="mt-4">
+                <div class="row colll">
+                    <div class="col-xl-6 pt-3 px-4"><h2 mat-subheading-1>Part C</h2></div>
+                </div>
+            </header>
+            <h3 class="mt-3 px-3">Is Contolling person other than India</h3>
+            <div class="row mt-3 px-3">   
+                <div class="col-xl-3 ">
+                    No<mat-slide-toggle  class="fs-5" color="primary"></mat-slide-toggle>Yes
+                </div>                        
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-3">
+                    <mat-form-field  class="w-100">
+                        <label class=" text-secondary">Controlling Person Name</label>
+                        <mat-select formControlName="controllingpersonname">
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Haserror('controllingpersonname','required')">Please select Controlling Person Name</mat-error>
+                      </mat-form-field> 
+                   
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >Countey Of Tax Resiency</label>
+                        <input matInput formControlName="countryoftaxresidency" autocomplete="off">
+                    <mat-error *ngIf="Haserror('controllingpersonname','required')"> Please select Controlling Person Name</mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >Moblie NO</label>
+                        <input type="number" matInput  formControlName="mobileno" maxlength="10">
+                    <mat-error *ngIf="Haserror('mobileno','required')"> Please enter mobile number</mat-error>
+                    <mat-error *ngIf="Haserror('mobileno','pattern')"> Please enter vaild number</mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field  class="w-100">
+                        <label class=" text-secondary">Address Type</label>
+                        <mat-select formControlName="addresstype">
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Haserror('addresstype','required')">Please select Address Type</mat-error>
+                      </mat-form-field> 
+                </div>
+            </div>
+
+            <h3 class="mt-3 px-3">Address For Controlling Person</h3>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-9"> 
+                    <mat-form-field class="w-100" autocomplete="off" >
+                        <label class=" text-secondary" >Line1*</label>
+                        <input matInput formControlName="line1">
+                    <mat-error *ngIf="Haserror('line1','required')"> Please enter your address </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >Pincode</label>
+                        <input matInput formControlName="pincode">
+                    <mat-error *ngIf="Haserror('pincode','required')"> Please enter pincode </mat-error>
+                      </mat-form-field>
+                </div>
+               
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-9 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >Line 2*</label>
+                        <input matInput   formControlName="line2">
+                    <mat-error *ngIf="Haserror('line2','required')"> Please enter your address </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary">Area</label>
+                        <select matNativeControl required formControlName="area">
+                          <option value="lorem">lorem</option>
+                          <option value="lorem">lorem</option>
+                        </select>
+                    <mat-error *ngIf="Haserror('area','required')"> Please select area </mat-error>
+                      </mat-form-field>
+                </div>
+               
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-9 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >line3*</label>
+                        <input matInput   formControlName="line3">
+                    <mat-error *ngIf="Haserror('line3','required')"> Please select area </mat-error>
+                      </mat-form-field >
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field  class="w-100">
+                        <label class=" text-secondary">Country</label>
+                        <mat-select formControlName="country">
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                          <mat-option value="Lorem">lorem</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Haserror('country','required')">Please select country</mat-error>
+                      </mat-form-field> 
+                   
+                </div>
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >City/Town/Village</label>
+                        <input matInput  formControlName="city" >
+                    <mat-error *ngIf="Haserror('city','required')"> Please select City/Town/Village </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >District</label>
+                        <input matInput   formControlName="district">
+                    <mat-error *ngIf="Haserror('district','required')"> Please select District </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" >
+                        <label class=" text-secondary">State*</label>
+                        <select matNativeControl required formControlName="state">
+                          <option value="maharastra">maharastra</option>
+                          <option value="UtterPradesh">UtterPradesh</option>
+                        </select>
+                    <mat-error *ngIf="Haserror('state','required')"> Please select State </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" >
+                        <label class=" text-secondary">Identification Type</label>
+                        <select matNativeControl required formControlName="identification">
+                          <option value="lorem">Lorem</option>
+                          <option value="lorem">Lorem</option>
+                    <mat-error *ngIf="Haserror('identification','required')"> Please select Identification</mat-error>
+                        </select>
+                      </mat-form-field>
+                </div>
+
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >TIN</label>
+                        <input matInput formControlName="TIN" class="text-uppercase"maxlength="15">
+                    <mat-error *ngIf="Haserror('TIN','required')">  Please select TIN</mat-error>
+                    <mat-error *ngIf="Haserror('TIN','pattern')"> invaild tin number select TIN</mat-error>
+
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >Other</label>
+                        <input matInput   formControlName="other">
+                    <mat-error *ngIf="Haserror('other','required')"> Please select Other</mat-error>
+
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >Controlling Person Code type*</label>
+                        <input matInput   formControlName="controllingpesontypecode">
+                    <mat-error *ngIf="Haserror('controllingpesontypecode','required')"> Please select Controlling Person Code type</mat-error>
+
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >CustomerID</label>
+                        <input matInput   formControlName="cid">
+                    <mat-error *ngIf="Haserror('cid','required')"> Please select CustomerID</mat-error>
+
+                      </mat-form-field>
+                </div>
+
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" >
+                        <label class=" text-secondary">Occupation Type</label>
+                        <select matNativeControl required formControlName="occupationtype">
+                          <option value="Lorem">Lorem</option>
+                          <option value="Lorem">Lorem</option>
+                    <mat-error *ngIf="Haserror('occupationtype','required')"> Please select Occupation Type</mat-error>
+                        </select>
+                      
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" >
+                        <label class=" text-secondary">Speficy other Occupation</label>
+                        <select matNativeControl required formControlName="specifyotheroccupation">
+                          <option value="Lorem">Lorem</option>
+                          <option value="Lorem">Lorem</option>
+                    <mat-error *ngIf="Haserror('specifyotheroccupation','required')"> Please select Speficy other Occupation</mat-error>
+                        </select>
+                      
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" >
+                        <label class=" text-secondary">Gender</label>
+                        <select matNativeControl required formControlName="gender">
+                          <option value="Lorem">Lorem</option>
+                          <option value="Lorems">Lorems</option>
+                    <mat-error *ngIf="Haserror('gender','required')"> Please select Gender</mat-error>
+                        </select>
+                      
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >City Of Birth</label>
+                        <input matInput  formControlName="cityofbirth" >
+                    <mat-error *ngIf="Haserror('cityofbirth','required')"> Please select City Of Birth</mat-error>
+                      </mat-form-field>
+                </div>
+
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-3" > 
+                    <mat-form-field class="w-100">
+                    <label class=" text-secondary">Country Of Brith</label>
+                        <mat-select formControlName="countryofbirth">
+                          <mat-option *ngFor="let team of teams" [value]="team.name">
+                            {{team.name}}
+                          </mat-option>
+                        </mat-select>
+                    <mat-error *ngIf="Haserror('countryofbirth','required')"> Please select Country Of Brith</mat-error>
+                      </mat-form-field>
+                  
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" >
+                        <label class=" text-secondary">Nationality</label>
+                        <select matNativeControl required formControlName="nationality">
+                          <option value="lorem">lorem</option>
+                          <option value="lorems">lorems</option>
+                    <mat-error *ngIf="Haserror('nationality','required')"> Please select Nationality </mat-error>
+                        </select>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off" autocomplete="off">
+                        <label class=" text-secondary" >PAN</label>
+                        <input matInput  formControlName="Pan"  maxlength="10" class="text-uppercase">
+                    <mat-error *ngIf="Haserror('Pan','required')"> Please select PAN </mat-error>
+                    <mat-error *ngIf="Haserror('Pan','pattern')"> Invaild Pan </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100">
+                        <!-- <mat-label>Enter DOB dor related person</mat-label><br> -->
+                        <label class=" text-secondary">Date of birth</label>
+                        <input matInput [matDatepicker]="picker1"  formControlName="dob"  >
+                        <mat-datepicker-toggle matSuffix [for]="picker1" class="fs-5"></mat-datepicker-toggle>       
+                        <mat-datepicker #picker1></mat-datepicker>
+                    <mat-error *ngIf="Haserror('dob','required')"> Please select Date of birth </mat-error>
+                      </mat-form-field>
+                </div>
+
+            </div>
+            <div class="row mt-3 px-3">
+                <div class="col-xl-3 "> 
+                  <mat-form-field class="w-100" autocomplete="off">
+                    <label class=" text-secondary" >Father Name</label>
+                    <input matInput  formControlName="fathername" >
+                    <mat-error *ngIf="Haserror('fathername','required')"> Please select Father Name</mat-error>
+                    <mat-error *ngIf="Haserror('fathername','pattern')"> Please enter vaild father Name </mat-error>
+                  </mat-form-field>
+                   
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off" >
+                        <label class=" text-secondary">Spouse Name</label>
+                        <input matInput  formControlName="spousename" >
+                    <mat-error *ngIf="Haserror('spousename','required')"> Please select Spouse Name </mat-error>
+                    <mat-error *ngIf="Haserror('spousename','pattern')"> Please enter vaild Spouse Name </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100"autocomplete="off" >
+                        <label class=" text-secondary" >Aadhar Number</label>
+                        <input  matInput  formControlName="aadharno"  maxlength="12" autocomplete="off">
+                    <mat-error  *ngIf="Haserror('aadharno','required')"> Please select Aadhar Number </mat-error>
+                    <mat-error *ngIf="Haserror('aadharno','pattern')"> Invaild Aadhar Number </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" >
+                        <label class=" text-secondary">Identification Type</label>
+                        <select matNativeControl required formControlName="identificationtype2">
+                          <option value="lorem">lorem</option>
+                          <option value="lorems">lorems</option>
+                    <mat-error *ngIf="Haserror('identificationtype2','required')"> Please select Identification Type </mat-error>
+                        </select>
+                      </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mt-3 px-3">
+                
+                <div class="col-xl-3 "> 
+                    <mat-form-field class="w-100" autocomplete="off">
+                        <label class=" text-secondary" >Identification Number</label>
+                        <input matInput  formControlName="identificationnumber" >
+                    <mat-error *ngIf="Haserror('identificationnumber','required')"> Please select Identification Number </mat-error>
+                      </mat-form-field>
+                </div>
+               
+            </div>
+
+            <div class="row justify-content-center  my-5">
+                <div class="col-xl-3">
+                  <button mat-raised-button class="btnpadx fs-5 py-2 ml-5">Previous Page</button>
+                </div>
+                <div class="col-xl-3">
+                  <button mat-stroked-button  color="primary" class="btnpadx fs-5 py-2 border-primary">Save As Draft</button>
+                </div>
+                <div class="col-xl-3">
+                  <!-- <button mat-flat-button color="primary" [disabled]="!fatcaform.vaild" class="btnpadx fs-5 py-2 mr-5">Save&Next</button> -->
+                  <button  mat-flat-button color="primary"class="btnpadx fs-5 py-2 mr-5" >Save&Next</button>
+                </div>
+              </div>
+        
+            </form>
+    </div>
+</div>
+
+
